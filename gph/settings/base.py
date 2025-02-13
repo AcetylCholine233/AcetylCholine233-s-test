@@ -138,7 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us' #FIXME
 
-TIME_ZONE = 'America/New_York' #FIXME
+TIME_ZONE = 'Europe/London' #FIXME
 
 USE_I18N = True
 
@@ -258,23 +258,23 @@ LOGOUT_REDIRECT_URL = 'index'
 # under different environments.
 
 HUNT_START_TIME = timezone.make_aware(datetime.datetime(
-    year=9001,
-    month=1,
-    day=1,
-    hour=0,
+    year=2025,
+    month=2,
+    day=20,
+    hour=21,
     minute=0,
 ), timezone=datetime.timezone(datetime.timedelta(hours=11)))
 HUNT_END_TIME = timezone.make_aware(datetime.datetime(
-    year=9002,
-    month=1,
-    day=1,
-    hour=0,
+    year=2025,
+    month=2,
+    day=24,
+    hour=3,
     minute=0,
 ), timezone=datetime.timezone(datetime.timedelta(hours=11)))
 HUNT_CLOSE_TIME = timezone.make_aware(datetime.datetime(
-    year=9003,
-    month=1,
-    day=1,
+    year=2025,
+    month=3,
+    day=31,
     hour=0,
     minute=0,
 ), timezone=datetime.timezone(datetime.timedelta(hours=11)))
