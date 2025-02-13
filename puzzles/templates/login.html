@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
 
-<h2>{% translate "Login" %}</h2>
+<h2>{% translate "登录" %}</h2>
 
 <form id="login" method="post">
     {% csrf_token %}
@@ -21,9 +21,9 @@
                 {% url 'register' as register_url %}
                 {% url 'password_reset' as password_url %}
                 {% if field.name == 'username' %}
-                {% blocktranslate %}If you haven&rsquo;t created a team yet, <a href="{{ register_url }}" tabindex="1">register a new team here</a>.{% endblocktranslate %}
+                {% blocktranslate %}如果你未注册队伍，<a href="{{ register_url }}" tabindex="1">在此创建新队伍</a>。{% endblocktranslate %}
                 {% else %}
-                {% blocktranslate %}Forgot your password? <a href="{{ password_url }}" tabindex="1">Click here to reset password</a>.{% endblocktranslate %}
+                {% blocktranslate %}忘记密码？<a href="{{ password_url }}" tabindex="1">点此重置</a>。{% endblocktranslate %}
                 {% endif %}
                 {% endif %}
             </div>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="form-section">
-        <button class="btn" type="submit">{% translate "Submit" %}</button>
+        <button class="btn" type="submit">{% translate "提交" %}</button>
     </div>
 </form>
 
