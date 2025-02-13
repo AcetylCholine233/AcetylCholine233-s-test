@@ -4,55 +4,52 @@
 
 {% block content %}
 
-<h1>{% translate "About" %}</h1>
+<h1>{% translate "关于" %}</h1>
 
 <main>
     <div class="no-break">
-        <h4 id="Format">{% translate "What are the rules?" %}</h4>
+        <p>{% blocktranslate %}ACHunt是一个AcetylCholine233和他的小伙伴们举办的微型Puzzle Hunt，有8道题和一道META，大概是半天能完赛的程度。主题（大概）是动物园。qq群号是341768439，联系人qq号是2231126710。{% endblocktranslate %}</p>
+        <h4 id="Format">{% translate "赛程安排" %}</h4>
         <ul>
             {% format_time start_time "WEEKDATE_AT_TIME" as hunt_start %}
             {% format_time end_time "WEEKDATE_AT_TIME" as hunt_end %}
-            <li>{% blocktranslate %}The puzzlehunt starts on <strong>{{ hunt_start }}</strong> and ends on <strong>{{ hunt_end }}</strong>, at which point puzzle solutions will be available. {% endblocktranslate %}
-            {% comment %}
-            {% format_time close_time "WEEKDATE_AT_TIME" as hunt_close %}
-            {% blocktranslate %}However, we will leave the website running until <strong>{{ hunt_close }}</strong> so teams can still submit answers and go through the hunt at their own pace.{% endblocktranslate %}
-            {% endcomment %}
-            </li>
-            <li>{% blocktranslate with max_members=max_members_per_team contact=contact_email %}Teams have a maximum size of {{ max_members }}.{% endblocktranslate %}</li>
-            <li>{% blocktranslate %}We reserve the right to disqualify any team for unsportsmanlike conduct.{% endblocktranslate %}</li>
-            <li>{% blocktranslate with contact=contact_email %}If you have any questions about the hunt, or if you want to contact us for any reason, email <a href="mailto:{{ contact }}">{{ contact }}</a>. We will get back to you as soon as we can.{% endblocktranslate %}</li>
+            <p>{% blocktranslate %}ACHunt将于<strong>{{ hunt_start }}</strong>开始，于<strong>{{ hunt_end }}</strong>结束，届时（如果我不懒的话）会公布谜题解析。 {% endblocktranslate %}</p>
         </ul>
     </div>
     <div class="no-break">
-        <h4>{% translate "What is a puzzlehunt?" %}</h4>
-        <p>{% blocktranslate %}In a puzzlehunt, each puzzle has an underlying pattern or insight, which you need to figure out (somewhat like the <a href="https://en.wikipedia.org/wiki/Crossword#Themes">theme</a> of a crossword puzzle). Puzzles can come in many different forms; the only real commonality is that you usually receive no direct instructions, so it&rsquo;s up to you to figure out how to make sense of the information you&rsquo;re given. You can read a longer introduction to puzzlehunts <a href="https://blog.vero.site/post/puzzlehunts" target="_blank">here</a>.{% endblocktranslate %}</p>
-        <p>{% blocktranslate %}If you are new to puzzles and are interested in seeing some examples, or if you&rsquo;re looking for some practice, we recommend looking at puzzles from other online hunts such as <a target="_blank" href="https://galacticpuzzlehunt.com/">Galactic Puzzle Hunt</a>, <a target="_blank" href ="https://teammatehunt.com/">Teammate Hunt</a>, <a target="_blank" href="https://puzzlepotluck.com/">Puzzle Potluck</a>, or <a target="_blank" href="https://reddothunt.sg/2018">REDDOThunt</a>.{% endblocktranslate %}</p>
+        <h4>{% translate "组队细则" %}</h4>
+        <p><s>{% blocktranslate %}你已经是成熟的PHer了，应该熟悉GPH网站的组队页面（x）</s>{% endblocktranslate %}</p>
+        <p>{% blocktranslate with max_members=max_members_per_team%}不论是单人还是多人参赛，都需要注册一个队伍。在多人参赛的情况下，仅需队长一人注册账号，之后在队伍页面添加成员。本次Puzzle Hunt的组队上限为{{ max_members }}人。{% endblocktranslate %}</p>
     </div>
     <div class="no-break">
-        <h4 id="Format">{% translate "What is and isn’t allowed?" %}</h4>
+        <h4>{% translate "什么是Puzzle Hunt？" %}</h4>
+        <p>{% blocktranslate %}你可能已经接触过各种各样的谜题：杂志上的数独和爱因斯坦逻辑谜题，语文课上的灯谜，英语课上的填字游戏。也许你和同学玩过你画我猜，曾用密码加密信息让朋友破译；看过象棋或斗地主的残局问题，读过那些引人入胜的推理小说。或者，你的 Steam 库里有《Baba is You》这样的推箱子游戏，又或者在闲暇时光去过密室逃脱。{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}在Puzzle Hunt（解谜寻宝）中，你和你的团队需要解决的不止是一道，而是一系列这样的谜题，并从中发掘隐藏的线索。{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}想象一下，任何事物都可以成为谜题：看似是填字游戏，实际上是对填字格的推理；或是色块的组合，每组方块代表一个动漫角色。神奇的谜语，严密的逻辑，隐藏的图片，甚至可能是一首歌曲中歌手演唱的顺序，或是一部动画片里第一集结尾的密码，万事万物皆可成谜。{% endblocktranslate %}</p>    
+        <p>{% blocktranslate %}而你的目标，就是找到合适的线索，选择最符合当前情况的方法，从里面找到你的答案。无论如何，最终你一定能得到一组有意义的词语或一句话。{% endblocktranslate %}</p>    
+        <p>{% blocktranslate %}在解决一连串的谜题之外，元谜题（Meta Puzzle）会将你之前得到的所有答案串联成新的谜题，形成错综复杂的结构。{% endblocktranslate %}</p>  
+        <p>{% blocktranslate %}最终，Puzzle Hunt 的目标是团队共同解决所有出现的元谜题（是的！你不需要所有小题的答案就可以解决元谜题！），得到隐藏在谜题和谜题结构中的最终答案（通常被称为「Final Meta」）。{% endblocktranslate %}</p>    
+        <p>{% blocktranslate %}（以上是从ccbc的关于页上直接抄的）{% endblocktranslate %}</p>
+    </div>
+    <div class="no-break">
+        <h4 id="Format">{% translate "比赛须知" %}</h4>
         <ul>
-            <li>You may use any external sources for help, including other people, as long as they aren’t helping other teams and aren’t actively participating in the hunt.</li>
-            <li>You may not stream or post spoilers for the hunt in a place where other teams might see them.</li>
-            <li>You may not create multiple accounts or be on multiple teams.</li>
+            <li><s>参加ACHunt不需要任何专业知识！</s>由于主办者是生批，本次ACHunt需要微量的专业知识，但我们可以<strong>保证</strong>，hunt中用到的所有专业知识都可以通过合适的搜索和工具的利用在15分钟内掌握。</li>
+            <li>比赛不允许进行直播。您可以与身边其他人进行讨论，但请勿将答案发布在任何公开平台，例如论坛、社交媒体、多人数群聊等，请勿与其他参赛队伍交流题目或答案，违者将被视为作弊并取消参赛资格。</li>
+            <li>比赛不会涉及黑客相关技术手段，严禁攻击比赛服务器或进行类似行为。</li>
+            <li>主办方保留将有可疑行为的队伍暂时或永久移出排行榜的权力。</li>
+            <li>本次比赛采取元谜题完赛制，在所有题目中有一道元谜题（META），要做出这道题需要用到之前做过的每一道题的答案，做出这道题即视为完赛。</li>
+            <li>为了方便玩家与工作人员沟通，我们设置了站内信。站内信可能没有工作人员24小时在岗，发送后请耐心等待回复。工作人员可能需要处理其他玩家面对的紧急问题，请合理使用站内信资源，不要滥用本功能。</li>
+            <li><strong>如果你发现题目有误，请优先联系工作人员</strong>，而不是在公开场合发送，它可能会干扰其它玩家的正常做题。</li>
+            <p>（以上是从玥Hunt和SECOhunt的关于页上直接抄的）</p>
         </ul>
     </div>
     <div class="no-break">
-        <h4 id="Format">{% translate "What is the format of this hunt?" %}</h4>
-        <p>{% blocktranslate %}A few puzzles will be available at the start, and the primary way to unlock new puzzles is by solving puzzles and progressing through the hunt, although puzzles may also be unlocked over time.{% endblocktranslate %}</p>
-        <p>{% blocktranslate %}Each answer is a string of letters A&ndash;Z. Lowercase letters will be changed into uppercase, and any other characters will be stripped before checking for correctness.{% endblocktranslate %}</p>
-        <p>{% blocktranslate with max_guesses=max_guesses_per_puzzle %}You have <strong>{{ max_guesses }} total guesses</strong> for each puzzle. If you legitimately run out of guesses and need more, feel free to contact us, though we won&rsquo;t grant your request if we see that you were, for example, guessing random thematic answers, or brute-forcing all 10-letter words.{% endblocktranslate %}</p>
-    </div>
-    <div class="no-break">
-        <h4 id="Format">{% translate "How will hints work?" %}</h4>
-        {% format_time hint_time "WEEKDATE_AT_TIME" as hint_start %}
-        <p>{% blocktranslate %}Starting on <strong>{{hint_start}}</strong>, teams will receive one hint every <strong>FIXME</strong> until the end of the hunt.{% endblocktranslate %}</p>
-        {% if intro_hints %}
-        <p>{% blocktranslate count hints=intro_hints %}The first <strong>{{ hints }} hint</strong> your team receives may only be used on the first set of puzzles in the hunt.{% plural %}The first <strong>{{ hints }} hints</strong> your team receives may only be used on the first set of puzzles in the hunt.{% endblocktranslate %}</p>
-        {% endif %}
-        <p>{% blocktranslate %}You can use a hint to get help on a puzzle. This can be something like a nudge in the right direction (i.e. you give us your progress on the puzzle and we&rsquo;ll try to get you unstuck) or an answer to a question (e.g. &ldquo;Which answers to these crossword clues are wrong?&rdquo;).{% endblocktranslate %}</p>
-        {% if one_hint_at_a_time %}
-        <p>{% blocktranslate %}You can request only one hint at a time.{% endblocktranslate %}</p>
-        {% endif %}
+        <h4 id="Format">{% translate "解锁、提交和提示" %}</h4>
+        <p>{% blocktranslate %}初始会解锁3道题，之后每做出一道题就会解锁一道新题。META会在做出大部分小题后解锁。没有增加小题做题宽度的方法。{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}所有答案都是由字母A&ndash;Z组成的字符串。提交框内输入的小写字母将被转化为大写，其他字符将被忽略。{% endblocktranslate %}</p>
+        <p>{% blocktranslate with max_guesses=max_guesses_per_puzzle %}每道题有<strong>{{ max_guesses }}次</strong>提交机会。如果你需要更多提交次数，请通过站内信联系工作人员。{% endblocktranslate %}</p>
+        <p>{% blocktranslate %}每支队伍每小时将获得1点提示。{% endblocktranslate %}</p>
     </div>
 </main>
 
