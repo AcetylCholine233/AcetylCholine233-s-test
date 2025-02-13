@@ -16,7 +16,7 @@ CONTACT_EMAIL = 'hzhliang@icloud.com'
 MESSAGING_SENDER_EMAIL = 'no-reply@FIXME.example.com'
 
 # Change this to True to reveal the story page to everyone.
-STORY_PAGE_VISIBLE = False
+STORY_PAGE_VISIBLE = True
 # Change this to True when the wrapup exists.
 WRAPUP_PAGE_VISIBLE = False
 # Change this to True to start showing solve and guess counts on each puzzle.
