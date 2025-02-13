@@ -8,10 +8,10 @@
 }
 </style>
 
-<h2>{% translate "Register a new team" %}</h2>
+<h2>{% translate "注册新队伍" %}</h2>
 
 {% if team %}
-<h4>{% blocktranslate with team_name=team.team_name %}You&rsquo;re already logged in as {{team_name}}!{% endblocktranslate %}</h4>
+<h4>{% blocktranslate with team_name=team.team_name %}你已经作为{{team_name}}登录了！{% endblocktranslate %}</h4>
 {% endif %}
 
 <form id="register" method="post">
@@ -35,10 +35,10 @@
     </div>
 
     <div class="form-section">
-    <h4>{% translate "Team members" %}</h4>
+    <h4>{% translate "队伍成员" %}</h4>
 
-    <p>{% translate "You will also be able to add and remove team members at any later time on your team&rsquo;s profile page." %}<br>
-        {% translate "You’ll need to provide an email address for at least one of your team members." %}</p>
+    <p>{% translate "此后也可以在队伍界面添加成员。" %}<br>
+        {% translate "你需要提供至少一位队伍成员的电子邮箱。" %}</p>
 
     {{ team_members_formset.management_form }}
     {{ team_members_formset.non_form_errors }}
@@ -56,31 +56,14 @@
     </div>
 
     <div class="form-section">
-    {% if recaptcha_sitekey %}
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script>
-        function recaptchaSubmit() {
-            var form = document.getElementById('register');
-            if (form.reportValidity())
-                form.submit();
-            else
-                grecaptcha.reset();
-        }
-        </script>
-        <button class="btn g-recaptcha"
-                data-sitekey="{{ recaptcha_sitekey }}"
-                data-callback="recaptchaSubmit"
-                data-action="register">{% translate "Submit" %}</button>
-    {% else %}
-        <button class="btn" type="submit">{% translate "Submit" %}</button>
-    {% endif %}
+        <button class="btn" type="submit">{% translate "提交" %}</button>
     </div>
 </form>
 
 <script>
 $('.team-members-formset').formset({
     prefix: '{{ team_members_formset.prefix }}',
-    addText: '{% translate "Add another team member" %}',
+    addText: '{% translate "提交另一位队伍成员" %}',
     deleteText: '\u2716',
     addCssClass: 'formset-add-link',
 });
