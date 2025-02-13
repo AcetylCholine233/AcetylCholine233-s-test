@@ -1,9 +1,9 @@
 html {
-    --page-bg-rgb: 244, 242, 248;
+    --page-bg-rgb: 230, 210, 213;
     --accent-bg-rgb: 235, 213, 162; /**/
-    --accent-rgb: 94, 45, 240;
-    --dark-accent-rgb: 228, 223, 245; /**/
-    --body-rgb: 10, 8, 15;
+    --accent-rgb: 238, 39, 70;
+    --dark-accent-rgb: 2, 0, 12; /**/
+    --body-rgb: 2, 0, 12;
     --dark-flair-rgb: 240, 212, 110; /**/
     --flair-rgb: 239, 191, 46;
     --light-flair-rgb: 230, 181, 5; /**/
