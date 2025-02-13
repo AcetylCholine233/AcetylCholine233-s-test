@@ -142,35 +142,33 @@
                             })
                         </script>
                         {% endif %}
-                        <a href="{% url 'logout' %}">{% translate "Logout" %}</a>
+                        <a href="{% url 'logout' %}">{% translate "登出" %}</a>
                     {% elif not hunt_is_closed %}
-                        <a href="{% url 'login' %}">{% translate "Login" %}</a>
-                        <a href="{% url 'register' %}">{% translate "Register" %}</a>
+                        <a href="{% url 'login' %}">{% translate "登录" %}</a>
+                        <a href="{% url 'register' %}">{% translate "注册" %}</a>
                     {% endif %}
                 </div>
                 <div class="site-nav">
                     <a{% if request.path == '/' %} class="selected-tab"{% endif %} href="{% url 'index' %}">
-                        {% translate "Home" %}
+                        {% translate "主页" %}
                     </a>
                     <a{% if request.path == '/about' %} class="selected-tab"{% endif %} href="{% url 'about' %}">
-                        {% translate "About" %}
+                        {% translate "关于" %}
                     </a>
-                    {% if story_page_visible %}
                     <a{% if request.path == '/story' %} class="selected-tab"{% endif %} href="{% url 'story' %}">
-                        {% translate "Story" %}
+                        {% translate "剧情" %}
                     </a>
-                    {% endif %}
                     {% if hunt_has_started or hunt_has_almost_started %}
                     <a{% if '/puzzle' in request.path or puzzle %} class="selected-tab"{% endif %} href="{% url 'puzzles' %}">
-                        {% translate "Puzzles" %}
+                        {% translate "谜题" %}
                     </a>
                     {% endif %}
                     <a{% if '/team' in request.path %} class="selected-tab"{% endif %} href="{% url 'teams' %}">
-                        {% translate "Teams" %}
+                        {% translate "队伍" %}
                     </a>
                     {% if errata_page_visible %}
                     <a{% if request.path == '/errata' %} class="selected-tab"{% endif %} href="{% url 'errata' %}">
-                        {% translate "Updates" %}
+                        {% translate "更新" %}
                     </a>
                     {% endif %}
                     {% if wrapup_page_visible %}
@@ -179,7 +177,7 @@
                     </a>
                     {% endif %}
                     <a{% if request.path == '/archive' %} class="selected-tab"{% endif %} href="{{ archive_link }}">
-                        {% translate "Archive" %}
+                        {% translate "档案" %}
                     </a>
                 </div>
             </div>
