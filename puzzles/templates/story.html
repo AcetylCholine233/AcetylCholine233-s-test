@@ -2,10 +2,15 @@
 {% load i18n %}
 {% block content %}
 
-<h1>{% translate "Story" %}</h1>
+<h1>{% translate "剧情" %}</h1>
 
 <main>
 
+<div class="no-break story-chunk">
+    <h4>ACHunt：动物园打工记</h4>
+    {% translate "你是一名动物饲养员，在一个名不见经传的小动物园——ACE动物园工作。这两天，园长欧文先生突发奇想要将ACE动物园打造成世界一流动物园，而首要任务就是引进更多的新奇动物。他给了你一份需要引进的动物名单，让你全权负责。你一看却傻了眼：我一个读了10年读出来的动物学博士，怎么一种都没听说过？" %}
+</div>
+    
 {% for key in story_points %}
 
 {% if key == 'meta2_done' %}
