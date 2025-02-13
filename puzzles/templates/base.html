@@ -152,11 +152,9 @@
                     <a{% if request.path == '/' %} class="selected-tab"{% endif %} href="{% url 'index' %}">
                         {% translate "主页" %}
                     </a>
-                    {% endif %}
                     <a{% if request.path == '/about' %} class="selected-tab"{% endif %} href="{% url 'about' %}">
                         {% translate "关于" %}
                     </a>
-                    {% endif %}
                     <a{% if request.path == '/story' %} class="selected-tab"{% endif %} href="{% url 'story' %}">
                         {% translate "剧情" %}
                     </a>
@@ -169,7 +167,6 @@
                     <a{% if '/team' in request.path %} class="selected-tab"{% endif %} href="{% url 'teams' %}">
                         {% translate "队伍" %}
                     </a>
-                    {% endif %}
                     {% if errata_page_visible %}
                     <a{% if request.path == '/errata' %} class="selected-tab"{% endif %} href="{% url 'errata' %}">
                         {% translate "更新" %}
@@ -183,7 +180,6 @@
                     <a{% if request.path == '/archive' %} class="selected-tab"{% endif %} href="{{ archive_link }}">
                         {% translate "档案" %}
                     </a>
-                    {% endif %}
                 </div>
             </div>
         </span>
