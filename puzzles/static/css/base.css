@@ -1,12 +1,12 @@
 html {
-    --page-bg-rgb: 5, 5, 5;
-    --accent-bg-rgb: 40, 26, 33;
-    --accent-rgb: 237, 242, 243;
-    --dark-accent-rgb: 13, 4, 26;
-    --body-rgb: 221, 221, 215;
-    --dark-flair-rgb: 67, 38, 117;
-    --flair-rgb: 159, 122, 234;
-    --light-flair-rgb: 192, 168, 240;
+    --page-bg-rgb: 244, 242, 248;
+    --accent-bg-rgb: 235, 213, 162; /**/
+    --accent-rgb: 94, 45, 240;
+    --dark-accent-rgb: 228, 223, 245; /**/
+    --body-rgb: 10, 8, 15;
+    --dark-flair-rgb: 240, 212, 110; /**/
+    --flair-rgb: 239, 191, 46;
+    --light-flair-rgb: 230, 181, 5; /**/
 
     --white-color: #f9f8f5;
     --neutral-color: #bbbcc3;
@@ -25,14 +25,14 @@ html {
     --heading-text-color: var(--accent-color);
 
     --border-color: var(--accent-color);
-    --print-border-color: #111;
+    --print-border-color: #666;
 
     --link-text-color: var(--accent-color);
     --link-hover-color: #b794f4;
 
     --btn-text-color: var(--accent-color);
-    --btn-bg-color: rgba(var(--dark-flair-rgb), 0.8);
-    --btn-bg-2-color: rgba(var(--accent-bg-rgb), 0.8);
+    --btn-bg-color: rgba(var(--dark-flair-rgb), 0.5);
+    --btn-bg-2-color: rgba(var(--accent-bg-rgb), 1);
     --btn-hover-color: rgba(var(--flair-rgb), 0.7);
 
     --tray-text-color: var(--accent-color);
@@ -139,10 +139,6 @@ code {
     border: none;
     padding: 0.1em 0.25em;
     background-color: var(--primary-800);
-}
-
-tr:last-child td {
-    border-bottom: none;
 }
 
 a, .btn {
@@ -886,6 +882,10 @@ a.main-content-anchor {
     .spoiler:not(:hover) {
         background-color: currentColor;
         color: rgb(var(--accent-rgb));
+    }
+
+    .spoiler:not(:hover) * {
+      visibility: hidden;
     }
 }
 
