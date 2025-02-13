@@ -48,18 +48,18 @@
 {% if hunt_is_over %}
 <div class="feedback">
 {% if hunt_is_closed %}
-{% blocktranslate with title=hunt_title %}The {{ title }} has now come to a close. Thanks for puzzling with us!{% endblocktranslate %}
+{% blocktranslate with title=hunt_title %}{{ title }}现已结束！感谢游玩！{% endblocktranslate %}
 {% else %}
 {% format_time close_time "DATE_AT_TIME" as hunt_close %}
-{% blocktranslate with title=hunt_title %}The {{ title }} is now over, but you can still register and progress through the hunt until {{ hunt_close }}.{% endblocktranslate %}
+{% blocktranslate with title=hunt_title %}{{ title }}现已结束，但是在{{ hunt_close }}之前，你仍然可以注册并游玩。{% endblocktranslate %}
 {% endif %}
 <br>
 {% with feedback_url="https://FIXME" %}
 {% if wrapup_page_visible %}
 {% url 'wrapup' as wrapup_url %}
-{% blocktranslate %}Please fill out our <a href="{{ feedback_url }}">feedback form</a> and check out our <a href="{{ wrapup_url }}">wrap-up</a>!{% endblocktranslate %}
+{% blocktranslate %}请在<a href="{{ feedback_url }}">填写反馈表，帮助我们做得更好！</a>{% endblocktranslate %}
 {% else %}
-{% blocktranslate %}Please fill out our <a href="{{ feedback_url }}">feedback form</a> to let us know what you thought about the hunt.{% endblocktranslate %}
+{% blocktranslate %}请在<a href="{{ feedback_url }}">填写反馈表，帮助我们做得更好！</a>{% endblocktranslate %}
 {% endif %}
 {% endwith %}
 </div>
@@ -67,51 +67,47 @@
 
 <div class="info-row">
     <div>
-        <h4>{% translate "What" %}</h4>
+        <h4>{% translate "何事？" %}</h4>
         <div class="info-desc">
-            {% translate "A mysterious list of puzzles has appeared on the internet! If you can solve them, you could win prizes and bragging rights!" %}<sup>*</sup>
-            <br><br>
-            <div class="footnote"><sup>*</sup>{% translate "there are no prizes" %}</div>
+            {% translate "这是一个小小的Puzzle Hunt。"%}
+            {% url 'about' as about_url %}
+            {% blocktranslate %}查看<a href="{{ about_url }}">关于</a>页面以获取更多信息。{% endblocktranslate %}
+            {% translate "祝你玩得开心！"%}
         </div>
     </div>
     <div>
-        <h4>{% translate "When" %}</h4>
+        <h4>{% translate "何时？" %}</h4>
         <div class="info-desc">
             {% format_time start_time "DATE_AT_TIME" as hunt_start %}
             {% format_time end_time "DATE_AT_TIME" as hunt_end %}
             {% if hunt_is_over %}
-            {% blocktranslate %}The hunt began on {{ hunt_start }}, and ended on {{ hunt_end }}.{% endblocktranslate %}
+            {% blocktranslate %}比赛于{{ hunt_start }}开始,{{ hunt_end }}结束.{% endblocktranslate %}
             {% else %}
             {% days_between start_time end_time as num_days %}
-            {% blocktranslate %}The hunt will begin on {{ hunt_start }}, and it will end {{ num_days }} days later on {{ hunt_end }}.{% endblocktranslate %}
+            {% blocktranslate %}比赛将于{{ hunt_start }}开始,于{{ num_days }}天后的{{ hunt_end }}结束.{% endblocktranslate %}
             {% endif %}
         </div>
     </div>
     <div>
-        <h4>{% translate "Who" %}</h4>
+        <h4>{% translate "何士？" %}</h4>
         <div class="info-desc">
-            {% with organizer="FIXME" %}
-            {% if hunt_is_closed %}
-            {% blocktranslate %}This was a puzzlehunt run by {{ organizer }}.{% endblocktranslate %}
-            {% else %}
-            {% url 'about' as about_url %}
-            {% blocktranslate %}This is a puzzlehunt run by {{ organizer }}.{% endblocktranslate %}
-            {% blocktranslate %}Registration is open! Be sure to check out our <a href="{{ about_url }}">about</a> page for more information.{% endblocktranslate %}
-            {% endif %}
+            {% with organizer="AcetylCholine233" %}
+            {% blocktranslate %}是{{ organizer }}和他的小伙伴们举办的！{% endblocktranslate %}
             {% endwith %}
-            {% comment %}
-            {% blocktranslate with previous_hunts="FIXME" %}It is the follow-up to the previous <a href="{{ archive_link }}">{{ previous_hunts }} Puzzle Hunts</a>.{% endblocktranslate %}
-            {% endcomment %}
         </div>
     </div>
 </div>
 
 {% if not hunt_is_closed and not request.user.is_authenticated %}
 <div class="register">
-    <a href="{% url 'register' %}" class="btn">{% translate "Register your team!" %}</a>
+    <a href="{% url 'register' %}" class="btn">{% translate "立即注册你的队伍！" %}</a>
 </div>
 <h3 class="print-register">
-    <a>{% translate "Register at" %} https://FIXME</a>
+    <a>{% translate "立即注册你的队伍！"%} https://FIXME</a>
+</h3>
+{% endif %}
+{% endblock %}
+
 </h3>
 {% endif %}
 {% endblock %}
