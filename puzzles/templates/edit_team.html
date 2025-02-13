@@ -2,7 +2,7 @@
 {% load i18n %}
 {% block content %}
 
-<h2>{% blocktranslate with team_name=team.team_name %}Edit {{ team_name }} Members{% endblocktranslate %}</h2>
+<h2>{% blocktranslate with team_name=team.team_name %}编辑{{ team_name }}成员{% endblocktranslate %}</h2>
 
 <form id="register" method="post">
     {% csrf_token %}
@@ -28,14 +28,14 @@
     </div>
 
     <div class="form-section">
-        <button class="btn" type="submit">{% translate "Submit" %}</button>
+        <button class="btn" type="submit">{% translate "提交" %}</button>
     </div>
 </form>
 
 <script>
 $('.team-members-formset').formset({
    prefix: '{{ team_members_formset.prefix }}',
-   addText: '{% translate "Add another team member" %}',
+   addText: '{% translate "添加队伍成员" %}',
    deleteText: '\u2716',
    addCssClass: 'formset-add-link',
 });
