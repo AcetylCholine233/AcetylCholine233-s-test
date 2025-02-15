@@ -1,86 +1,91 @@
 - model: puzzles.Round
   pk: 1
   fields:
-    name: Sample Round
-    slug: sample
-    meta: 7
-- model: puzzles.Round
-  pk: 2
-  fields:
-    name: Sample Round II
-    slug: sample-ii
+    name: 动物园
+    slug: zoo
+    meta: 9
 - model: puzzles.Puzzle
   pk: 1
   fields:
-    name: Ambiguity
-    slug: ambiguity
-    body_template: ambiguity.html
-    answer: ISAAC
+    name: 熊山——Ursus paradoxicus
+    slug: ursus
+    body_template: ursus.html
+    answer: PANDA
     round: 1
     unlock_global: 0
 - model: puzzles.Puzzle
   pk: 2
   fields:
-    name: Bad Cryptogram Puzzle
-    slug: bad-cryptogram-puzzle
-    body_template: bad-cryptogram-puzzle.html
-    answer: ENGINEERS
+    name: 进化园——Antiquitas mea
+    slug: antiquitas
+    body_template: antiquitas.html
+    answer: OCEAN FAN
     round: 1
     unlock_global: 0
 - model: puzzles.Puzzle
   pk: 3
   fields:
-    name: Break It Down
-    slug: break-it-down
-    body_template: break-it-down.html
-    answer: HAMMER
+    name: 昆虫馆——Papilio bronte
+    slug: papilio
+    body_template: papilio.html
+    answer: FORESTS
     round: 1
     unlock_global: 0
 - model: puzzles.Puzzle
   pk: 4
   fields:
-    name: Championship
-    slug: championship
-    body_template: championship.html
-    answer: SCRIPPS
+    name: 园长办公室——Clupea harengus ruber
+    slug: clupea
+    body_template: clupea.html
+    answer: IGNEOUS
     round: 1
-    unlock_global: 0
+    unlock_global: 1
 - model: puzzles.Puzzle
   pk: 5
   fields:
-    name: Diagramless
-    slug: diagramless
-    body_template: diagramless.html
-    answer: BASS
+    name: 猛兽区——Ovis aries baba
+    slug: ovis
+    body_template: ovis.html
+    answer: BEND THE BAND
     round: 1
-    unlock_global: 0
+    unlock_global: 2
 - model: puzzles.Puzzle
   pk: 6
   fields:
-    name: Geometry
-    slug: geometry
-    body_template: geometry.html
-    answer: PARALLEL
+    name: 研究室——Drosophila chromos
+    slug: drosophila
+    body_template: drosophila.html
+    answer: BIGFOOT
     round: 1
-    unlock_global: 0
+    unlock_global: 3
 - model: puzzles.Puzzle
   pk: 7
   fields:
-    name: "Meta: Sample"
-    slug: sample
-    body_template: sample.html
-    answer: SAMPLE
+    name: 珍禽馆——Verbamorpha seuss
+    slug: verbamorpha
+    body_template: verbamorpha.html
+    answer: LAWN ALGAE
     round: 1
-    unlock_global: 0
+    unlock_global: 4
 - model: puzzles.Puzzle
   pk: 8
   fields:
-    name: "Interactive Demo"
-    slug: interactive-demo
-    body_template: interactive-demo.html
-    answer: DEMO
-    round: 2
-    unlock_global: 0
+    name: 水族馆——Pisciforme numeratus
+    slug: pisciforme
+    body_template: pisciforme.html
+    answer: MARINE SPIRAL
+    round: 1
+    unlock_global: 5
+- model: puzzles.Puzzle
+  pk: 9
+  fields:
+    name: "Meta：自然博物馆"
+    slug: nhm
+    body_template: nhm.html
+    answer: FIND LUCA
+    round: 1
+    unlock_global: 6
+    is_meta: True
 - model: auth.User
   pk: 1
   fields:
