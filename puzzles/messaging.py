@@ -44,10 +44,10 @@ VICTORY_DISCORD_USERNAME = 'FIXME PH CongratBot'
 # From a channel you can create them under Integrations > Webhooks.
 # They can be the same webhook if you don't care about keeping them in separate
 # channels.
-ALERT_WEBHOOK_URL = 'FIXME'
-SUBMISSION_WEBHOOK_URL = 'FIXME'
-FREE_ANSWER_WEBHOOK_URL = 'FIXME'
-VICTORY_WEBHOOK_URL = 'FIXME'
+ALERT_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/'
+SUBMISSION_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/'
+FREE_ANSWER_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/'
+VICTORY_WEBHOOK_URL = 'https://discordapp.com/api/webhooks/'
 
 # Assuming you want messages on a messaging platform that's not Discord but
 # supports at least a vaguely similar API, change the following code
